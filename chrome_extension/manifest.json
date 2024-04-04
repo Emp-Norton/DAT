@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "name": "DAT: Dat Absolute Time",
+  "version": "1.0",
+  "description": "Runs a basic script on the DAT time reporting site to convert relative timestamps to absolute. This enables the user to see the time they submitted each task with more granularity.",
+  "permissions": ["activeTab"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/timestamp16.ico",
+      "48": "images/timestamp48.ico",
+      "128": "images/timestamp128.ico"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.example.com/*"],
+      "js": ["timeannotation.js"]
+    }
+  ]
+}
