@@ -6,3 +6,17 @@ document.getElementById('runScript').addEventListener('click', async () => {
     });
 });
 
+
+document.getElementById('saveButton').addEventListener('click', () => {
+    const userInput = document.getElementById('userInput').value;
+
+    fetch('http://localhost:3000/saveData', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ data: userInput })
+    })
+    .then(response => console.log('Success:', response))
+    .catch(error => console.error('Error:', error));
+});
