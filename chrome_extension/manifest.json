@@ -1,25 +1,25 @@
 
 {
-  manifest_version: 3,
-  name: DAT: Dat Absolute Time,
-  version: 3.0,
-  description: Runs a basic script on the DAT time reporting site to convert relative timestamps to absolute. This enables the user to see the time they submitted each task with more granularity.,
-  permissions: [activeTab, scripting, tabs],
-  action: {
-    default_popup: popup.html,
-    default_icon: {
-      16: images/timestamp16.ico,
-      48: images/timestamp48.ico,
-      128: images/timestamp128.ico
+  "manifest_version": 3,
+  "name": DAT: Dat Absolute Time,
+  "version": 3.0,
+  "description": Runs a basic script on the DAT time reporting site to convert relative timestamps to absolute. This enables the user to see the time they submitted each task with more granularity.,
+  "permissions": [activeTab, scripting, tabs],
+  "action": {
+    "default_popup": popup.html,
+    "default_icon": {
+      "16": images/timestamp16.ico,
+      "48": images/timestamp48.ico,
+      "128": images/timestamp128.ico
     }
   },
-  background: {
-    service_worker: background.js
+  "background": {
+    "service_worker": background.js
   },
-  content_scripts: [
+  "content_scripts": [
     {
-      matches: [*://*.dataannotation.tech/*],
-      js: [timeannotation.js]
+      "matches": [*://*.dataannotation.tech/*],
+      "js": [timeannotation.js]
     }
   ]
 }
