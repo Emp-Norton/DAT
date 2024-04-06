@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000; // Or your desired port
 
-const uri = mongodb://localhost:27017/; // Assuming standard MongoDB port
+const uri = 'mongodb://localhost:27017/'; // Assuming standard MongoDB port
 
 app.use(bodyParser.json());
 
